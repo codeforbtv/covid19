@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import { FirestoreProvider } from 'react-firestore';
+
 import App from './components/App';
-import * as serviceWorker from './serviceWorker';
-
+ 
+const config = {
+    apiKey: "AIzaSyCbRIf0Ek1brQMBH0BlH8BBBTHSaEKh9ao",
+    authDomain: "vt-covid-resources.firebaseapp.com",
+    databaseURL: "https://vt-covid-resources.firebaseio.com",
+    projectId: "vt-covid-resources",
+    storageBucket: "vt-covid-resources.appspot.com",
+    messagingSenderId: "857078712904",
+    appId: "1:857078712904:web:4e4781e6be53991205267d",
+    measurementId: "G-J9XKK8Q6MW",
+};
+ 
+firebase.initializeApp(config);
+ 
 ReactDOM.render(
-  <React.StrictMode>
+  <FirestoreProvider firebase={firebase}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </FirestoreProvider>,
+  document.getElementById('root'),
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
