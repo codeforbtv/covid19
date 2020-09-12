@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import 'firebase/firestore';
 
 const config = {
     apiKey: "AIzaSyCbRIf0Ek1brQMBH0BlH8BBBTHSaEKh9ao",
@@ -14,7 +15,9 @@ const config = {
 class Firebase {
     constructor() {
        app.initializeApp(config); 
+       this.db = app.firestore();
    }
+   docs = () => this.db.ref('health-wellness-accessibility');
 }
 
 export default Firebase;
