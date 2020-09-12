@@ -1,14 +1,29 @@
 import React from 'react';
- 
-import  { FirebaseContext } from '../Firebase';
+import { FirestoreCollection } from 'react-firestore';
 
-const HealthData = () => (
-
-  <FirebaseContext.Consumer>
-    {firebase => {
-      return <div firebase={firebase} >I've access to Firebase and render something.</div>;
-    }}
-  </FirebaseContext.Consumer>
-);
-
-export default HealthData;
+const Health = () => (
+    <FirestoreCollection
+        path={'health-wellness-accessibility'}
+        render={({ data }) => {
+            return (
+                    <div>
+                        <h1>Health</h1>
+                        <ul>
+                            {data.map(doc => (
+                                <li key={doc.id}>
+                                    <strong>Name: </strong>{doc.name}
+                                    <br/>
+                                    <strong>Topic: </strong>{doc.topic}
+                                    <br/>
+                                    <strong>Number: </strong>{doc.number}
+                                    <br/>
+                                    <strong>Website: </strong>{doc.website}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                );
+        }}
+    />
+)
+export default Health;
