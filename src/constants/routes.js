@@ -1,7 +1,5 @@
 export const LANDING = '/';
-export const HEALTH = '/health';
-export const SIGN_IN = '/signin';
-export const HOME = '/home';
-export const ACCOUNT = '/account';
-export const ADMIN = '/admin';
-export const PASSWORD_FORGET = '/pw-forget';
+export const DOMESTIC_VIOLENCE = '/domestic-violence';
+export const DEPT_MENTAL_HEALTH = '/dept-mental-health';
+export const CRISIS_HELP_LINES = '/crisis-help-lines';
+export const DEPT_CHILD_FAM = '/dept-child-fam';
