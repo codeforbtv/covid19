@@ -14,7 +14,7 @@ This library offers pre-built React components that wrap Firebase accessibility.
 
 ## Contributing
 - Pull the latest master branch
-- Create a new branch with the following naming convention: `git branch <brief-description-issue-numofissue>` where *issue* is the github issue number which corresponds to the fix or feature being added
+- Create a new branch with the following naming convention: `git branch <brief-description-issue-numofissue>` where *numofissue* is the github issue number which corresponds to the fix or feature being added
   - If more than one github issues are addressed, name the branch: <brief-description-issues-num1-num2-...>
   - If no coressponding github issues exist, create one
 - Checkout the newly created branch: `git checkout <name-of-branch>`
